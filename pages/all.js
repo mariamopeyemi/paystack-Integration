@@ -19,7 +19,7 @@ export default function GetAll() {
     
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer sk_test_33445a56c5bfe1219cebcfd0efb3910b10e774db'
+      'Authorization': 'Bearer sk_test_7c6397333b9f0b13e384afd48f572de63abea089'
     
     }
     try {

@@ -13,7 +13,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
 
   // const vatAmount = 170 + 10 + 170 + 170 * 0.025;
-  const totalAmount = '19200';
+  const totalAmount = '1999000';
   const router = useRouter();
   const validEmail = new RegExp(
 		"^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
@@ -32,7 +32,7 @@ export default function Home() {
     // setLoading(true);
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer sk_test_33445a56c5bfe1219cebcfd0efb3910b10e774db'
+      'Authorization': 'Bearer sk_test_7c6397333b9f0b13e384afd48f572de63abea089'
     
     }
      await  axios.post('https://api.paystack.co/transaction/initialize', {
