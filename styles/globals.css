@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #638D33;
+  --color-primary-grad: linear-gradient(90deg, #638D33 0%, #89C149 100%);
+
+  --color-gray-1: #C5C8BA;
+  --color-gray-2: #A9AD9F;
+}
+
+@layer base {
+  html {
+    /* 16px = 100% */
+    /* 10px = 62.5% */
+    font-size: 100%
+  }
+
+  body {
+    @apply bg-[#111111];
+    overflow-x: hidden
+  }
+
+  h1 {
+    @apply text-6xl font-extrabold;
+  }
+
+  h2 {
+    @apply text-5xl font-extrabold text-gray-1;
+    letter-spacing: -0.25px
+  }
+
+  h3 {
+    @apply text-5xl font-bold text-black;
+  }
+
+
+
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-2xl h-12 p-8 py-3 text-white text-base font-medium;
+
+    /* can be treated like a fallback */
+    background-color: var(--color-primary);
+    /* will be "on top", if browser supports it */
+    background-image: var(--color-primary-grad);
+    /* these will reset other properties, like background-position, but it does know what you mean */
+    /* background: red;
+    background: linear-gradient(red, orange); */
+
+  }
+
+  .link-primary {
+    @apply text-base font-medium text-white cursor-pointer;
+  }
+
+  .heading-grad-caption {
+    @apply grad-text text-lg font-medium capitalize inline-flex;
+    letter-spacing: 0.4em;
+  }
+
+  .heading-desc {
+    @apply text-[#A9AD9F] text-base font-normal;
+    letter-spacing: 0.5px;
+  }
+}
+
+@layer utilities {
+  .grad-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[#89C149]
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
