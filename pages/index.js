@@ -13,7 +13,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
 
   // const vatAmount = 170 + 10 + 170 + 170 * 0.025;
-  const totalAmount = '200200';
+  const totalAmount = '19200';
   const router = useRouter();
   const validEmail = new RegExp(
 		"^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
