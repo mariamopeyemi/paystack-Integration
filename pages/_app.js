@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Milade Store</title>
-        <link rel="icon" href="/yebox-logo.svg" sizes="32x32" />
+        <title>Mariam Store</title>
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <div className={`${inter.variable} font-sans`}>

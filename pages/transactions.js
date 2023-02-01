@@ -16,8 +16,7 @@ import formatDate from "@/components/formatDate";
 export default function GetOne() {
 
   // const vatAmount = 170 + 10 + 170 + 170 * 0.025;
-  const totalAmount = '19200';
-  const router = useRouter();
+ 
  
 
 	const [modal, setModal] = useState(false);
@@ -26,6 +25,7 @@ export default function GetOne() {
 	const [outputEach, setOutputEach] = useState({});
 
   const [inputValue, setInputValue] = useState([]);
+ useEffect(() => {
   const handleSubmit = async () => {
     
     const headers = {
@@ -47,6 +47,9 @@ export default function GetOne() {
         throw error
       }
       };
+      handleSubmit()
+ }, [])
+ 
     const getIndividual = async (id) => {
       const headers = {
         'Content-Type': 'application/json',
@@ -102,7 +105,7 @@ export default function GetOne() {
         <div
           className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
           <button type="button"
-            className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+            className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-400 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-900 active:shadow-lg transition duration-150 ease-in-out"
             data-bs-dismiss="modal"
             onClick={()=>setModal(!modal)}>
             Close
@@ -113,11 +116,11 @@ export default function GetOne() {
     </div>
   </div>
       }
-      {/* RGet  All transaction Page */}
+      {/* Get  All transaction Page */}
       <section className=" bg-[#fbfbfb] h-[auto] min-h-[80vh] flex flex-col  p-[2rem]">
         
-        <button className="w-[250px] btn-primary" onClick={handleSubmit}> Get All</button>
-       <p> Please click on get all to retrieve all transactions then click on view to get individual transactions</p>
+        {/* <button className="w-[250px] btn-primary" onClick={handleSubmit}> Get All</button> */}
+       <p> Here all transactions are gotten on load of page and each can be viewed.</p>
        <p>All transaction available  {inputValue?.meta?.total}</p>
        <div className="w-[100%] overflow-x-scroll scroll_hide">
         <table className=" w-full  border-gray-lighter border-collapse">
@@ -125,6 +128,9 @@ export default function GetOne() {
             <tr>
               <th className="border-b border-r border-gray-lighter font-medium text-left pt-[10px] px-[16px] ">
                 <span className=" align-text-bottom mt-auto subheader_light">ID</span>
+              </th>
+              <th className="border-b border-r border-gray-lighter font-medium text-left pt-[10px] px-[16px] ">
+                <span className=" align-text-bottom mt-auto subheader_light"> Email</span>
               </th>
               <th className="border-b border-r border-gray-lighter font-medium text-left pt-[10px] px-[16px] ">
                 <span className=" align-text-bottom mt-auto subheader_light"> Status</span>
@@ -143,6 +149,9 @@ export default function GetOne() {
             <tr  key={index} className="h-[52px] px-[0.4rem]">
               <td className="px-[16px] text-left border-r border-b ">
                 <p className="h-full flex body_light text-gray-dark items-center">{item.id}</p>
+              </td>
+              <td className="px-[16px] text-left border-r border-b ">
+                <p className="h-full flex body_light text-gray-dark items-center">{item.customer.email}</p>
               </td>
 
               <td className="px-[16px] text-left border-r border-b ">

@@ -13,7 +13,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
 
   // const vatAmount = 170 + 10 + 170 + 170 * 0.025;
-  const totalAmount = '19200';
+  const totalAmount = '10200';
   const router = useRouter();
   const validEmail = new RegExp(
 		"^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
@@ -61,30 +61,6 @@ export default function Home() {
       });
     }
 
-  // const handleVerification = async () => {
-  //   // e.preventDefault();
-  //  const {reference} = await handleSubmit()
-  //   const headers = {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': 'Bearer sk_test_33445a56c5bfe1219cebcfd0efb3910b10e774db'
-    
-  //   }
-  //   // const reference = response.data.data.reference;
-  //    await  axios.get(`https://api.paystack.co/transaction/verify/${reference}`, 
-  //      {
-  //       headers
-  //     })
-  //     console.log(reference, 'i am reference', response)
-  //    .then(function (response) {
-  //       console.log(response);
-       
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //       // toast.error
-  //       alert('An error occured, please try again')
-  //     });
-  //   }
   return (
     <>
 
